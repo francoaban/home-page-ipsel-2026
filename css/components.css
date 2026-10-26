@@ -44,7 +44,9 @@
 .nav__link[aria-current="page"] { color: var(--slate-900); font-weight: 700; }
 
 .site-header__actions { display: flex; align-items: center; gap: var(--space-3); }
-.site-header__cta { display: none; }
+/* Especificidad extra: .btn (definido más abajo) también declara display y,
+   con la misma especificidad, ganaría por orden de aparición. */
+.site-header .site-header__cta { display: none; }
 
 .nav__toggle {
   width: 2.5rem; height: 2.5rem; display: grid; place-items: center;
@@ -60,7 +62,7 @@
    entren los 6 ítems junto a la marca y el CTA (a 1024px entra justo). */
 @media (min-width: 48em) {
   .brand__tag { display: block; }
-  .site-header__cta { display: inline-flex; }
+  .site-header .site-header__cta { display: inline-flex; }
 }
 
 @media (min-width: 64em) {

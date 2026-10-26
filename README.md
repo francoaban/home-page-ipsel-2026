@@ -132,8 +132,20 @@ Ambos se regeneran con:
 
 ```bash
 npm run build   # regenera header/footer, bloques, textos y tipografia.css (commitear los .html y el CSS)
-npm run check   # valida imágenes ≤ 300 KB, un solo <h1>, estilos en línea y la tipografía generada
+npm run check   # valida imágenes ≤ 300 KB, un solo <h1>, estilos en línea, la tipografía generada y los enlaces internos
 ```
+
+### Tests automáticos
+
+```bash
+npm run serve     # servidor estático local en http://127.0.0.1:4173 (opcional: Playwright lo levanta solo)
+npm run test:e2e  # tests E2E del menú, los enlaces de la home y las anclas (Chromium escritorio + móvil)
+npm test          # chequeos de calidad + enlaces + tests E2E (lo que corre el CI)
+```
+
+- `scripts/check-links.js` valida, sin dependencias, que cada enlace interno apunte a un archivo y a un `id` existente (incluidos los `noticias.html#noticia-<id>`, que resuelve JavaScript).
+- `tests/` usa [Playwright](https://playwright.dev/). La primera vez: `npm install` y `npx playwright install chromium`.
+- `tests/regresiones.spec.js` cubre los errores corregidos (doctype, pestaña del plan, filtros de noticias, desbordes en pantallas angostas): si alguno vuelve, el test falla.
 
 - `js/data/noticias.data.js`, `js/data/plan-estudios.data.js` y `js/data/contacto.data.js` también los usa el navegador (esas páginas son interactivas).
 - El resto de los `js/data/*.data.js` los usa solo el build: el HTML inyectado queda **estático**, así el sitio funciona aunque falle el JavaScript.

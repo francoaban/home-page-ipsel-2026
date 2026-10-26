@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.matchMedia("(min-width: 64em)").addEventListener("change", (e) => { if (e.matches) setMenu(false); });
   }
 
-  // Año actual en el footer
-  const year = document.querySelector("[data-year]");
-  if (year) year.textContent = new Date().getFullYear();
+  // Año actual en el footer. Se limita al pie: en plan-estudios.html el primer
+  // [data-year] del documento es la pestaña "1.er año", no el copyright.
+  document.querySelectorAll("footer [data-year]").forEach((year) => {
+    year.textContent = new Date().getFullYear();
+  });
 });

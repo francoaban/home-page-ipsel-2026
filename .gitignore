@@ -35,6 +35,13 @@ pnpm-debug.log*
 .cache/
 coverage/
 
+# ─── Tests E2E (Playwright) ───
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+.playwright-cli/
+
 # ─── Secretos y configuración local ───
 .env
 .env.*

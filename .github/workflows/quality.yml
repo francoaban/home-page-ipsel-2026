@@ -1,8 +1,9 @@
 name: Calidad
 
 # Verifica que el header/footer y los bloques de contenido generados estén
-# sincronizados con partials/ y js/data/, y ejecuta las comprobaciones básicas
-# (imágenes, h1, estilos en línea...).
+# sincronizados con partials/ y js/data/, ejecuta las comprobaciones básicas
+# (imágenes, h1, estilos en línea, enlaces rotos...) y los tests E2E del menú
+# y de los enlaces.
 
 on:
   push:
@@ -24,5 +25,34 @@ jobs:
           npm run build
           git diff --exit-code
 
-      - name: Comprobaciones de calidad
+      - name: Comprobaciones de calidad y enlaces
         run: npm run check
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Tests E2E (menú y enlaces)
+        run: npm run test:e2e
+
+      - name: Guardar el reporte si falla
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
