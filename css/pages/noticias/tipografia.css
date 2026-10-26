@@ -4,14 +4,3 @@
    No editar a mano: se sobrescribe en el próximo `npm run build`.
    Cada clase .tx-<clave> es la tipografía de un texto de la pantalla.
    ========================================================= */
-
-.tx-aviso { font-family: var(--font-sans); font-size: var(--fs-base); color: var(--text); }
-.tx-encabezado-eyebrow { font-family: var(--font-sans); font-size: var(--fs-xs); color: var(--accent); }
-.tx-encabezado-titulo { font-family: var(--font-sans); font-size: var(--fs-h1); color: var(--text); }
-.tx-encabezado-lead { font-family: var(--font-sans); font-size: var(--fs-base); color: var(--text-muted); }
-.tx-listado-eyebrow { font-family: var(--font-sans); font-size: var(--fs-xs); color: var(--accent); }
-.tx-filtro-categoria-label { font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text); }
-.tx-filtro-fecha-label { font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text); }
-.tx-filtro-buscar-label { font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text); }
-.tx-detalle-eyebrow { font-family: var(--font-sans); font-size: var(--fs-xs); color: var(--accent); }
-.tx-relacionadas-eyebrow { font-family: var(--font-sans); font-size: var(--fs-xs); color: var(--accent); }

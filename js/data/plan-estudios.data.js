@@ -1,110 +1,16 @@
 // js/data/plan-estudios.data.js — FUENTE DE INFORMACIÓN de la pantalla Plan de Estudios (mock).
 // Responsable: Frente Plan de Estudios (grupos 7–9). Este archivo no contiene lógica.
 //
-// Lo consume scripts/build.js (ver el contrato en scripts/render.js) y también el
+// Lo consume scripts/build.js para generar las pestañas de años y también el
 // navegador: js/pages/plan-estudios/plan-estudios.js lee `materias`, `años` y `ui`.
-//   · `textos`  → textos fijos. Cada clave corresponde a un data-tx="clave" de
-//                 plan-estudios.html y define, opcionalmente, su tipografía.
-//   · `años`    → etiqueta de cada año de cursado (pestañas).
-//   · `materias`→ materias por año.
-//   · `ui`      → textos que la página escribe en tiempo de ejecución.
+//   · `años`     → etiqueta de cada año de cursado (pestañas).
+//   · `materias` → materias por año.
+//   · `ui`       → textos que la página escribe en tiempo de ejecución.
 // Flujo: editar este archivo → `npm run build` → commitear plan-estudios.html y
-// css/pages/plan-estudios/tipografia.css.
+// cualquier otro archivo generado.
 //
 // Reemplazar por el plan real validado por la institución.
 const planEstudiosData = {
-  // Identidad de la pantalla (<title> y <meta name="description">).
-  textos: {
-    "pantalla-titulo": { titulo: "Plan de estudios | IPSEL" },
-    "pantalla-descripcion": { detalle: "Plan de estudios de demostración para la maqueta del sitio IPSEL." },
-
-    aviso: {
-      detalle:
-        "Contenido de demostración: materias, carga horaria y datos académicos de esta página son ilustrativos y no representan el plan oficial.",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-base",
-      color: "--text",
-    },
-
-    // Oferta académica.
-    "oferta-eyebrow": {
-      titulo: "Oferta académica",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-xs",
-      color: "--accent",
-    },
-    "oferta-titulo": {
-      titulo: "Bachiller en Informática",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-h1",
-      color: "--text",
-    },
-    "oferta-subtitulo": { detalle: "Plan de estudios · 1.er a 5.º año" },
-    "oferta-intro": {
-      detalle: "Explorá las materias, la carga horaria y los detalles de cada espacio curricular.",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-base",
-      color: "--text-muted",
-    },
-
-    // Información de carrera.
-    "carrera-titulo": {
-      titulo: "Información de carrera",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-h3",
-      color: "--text",
-    },
-    "carrera-dato-carrera-titulo": { titulo: "Carrera" },
-    "carrera-dato-carrera-detalle": { detalle: "Carrera de muestra" },
-    "carrera-dato-duracion-titulo": { titulo: "Duración" },
-    "carrera-dato-duracion-detalle": { detalle: "5 años" },
-    "carrera-dato-modalidad-titulo": { titulo: "Modalidad" },
-    "carrera-dato-modalidad-detalle": { detalle: "Presencial" },
-    "carrera-dato-titulacion-titulo": { titulo: "Titulación" },
-    "carrera-dato-titulacion-detalle": { detalle: "Titulación de ejemplo" },
-    "carrera-dato-cupos-titulo": { titulo: "Cupos" },
-    "carrera-dato-cupos-detalle": { detalle: "Dato de ejemplo" },
-    "objetivo-titulo": { titulo: "Objetivo" },
-    "objetivo-item-1": { detalle: "Formar profesionales críticos y reflexivos." },
-    "objetivo-item-2": { detalle: "Desarrollar competencias para la docencia e investigación." },
-    "descargar-plan": { titulo: "Descargar plan en PDF" },
-
-    // Buscador y filtros.
-    "buscador-etiqueta": { detalle: "Buscar materia por nombre o código" },
-    "buscador-placeholder": { detalle: "Buscar materia por nombre o código…" },
-    "buscador-limpiar": { detalle: "Limpiar búsqueda" },
-    "filtro-tipo-etiqueta": { detalle: "Filtrar por tipo de materia" },
-    "filtro-tipo-todos": { titulo: "Todos los tipos" },
-    "filtro-tipo-obligatoria": { titulo: "Obligatoria" },
-    "filtro-tipo-optativa": { titulo: "Optativa" },
-    "años-etiqueta": { detalle: "Año de cursado" },
-
-    // Listado y detalle de materias.
-    "estudio-eyebrow": {
-      titulo: "Plan de estudios",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-xs",
-      color: "--accent",
-    },
-    "estudio-titulo": { titulo: "1.er año — Materias" },
-    "materias-count": { titulo: "4 materias" },
-    "tabla-codigo": { titulo: "Código" },
-    "tabla-materia": { titulo: "Materia" },
-    "tabla-horas": { titulo: "Horas" },
-    "tabla-tipo": { titulo: "Tipo" },
-    "tabla-acciones": { detalle: "Acciones" },
-    "materias-lista-etiqueta": { detalle: "Materias" },
-    "detalle-eyebrow": {
-      titulo: "Detalle de materia seleccionada",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-xs",
-      color: "--accent",
-    },
-    "detalle-titulo": { titulo: "Matemática I" },
-    "detalle-cerrar": { detalle: "Cerrar detalle" },
-    "detalle-cerrar-abajo": { titulo: "Cerrar detalle" },
-  },
-
   // Textos que la página escribe al interactuar (js/pages/plan-estudios/plan-estudios.js).
   ui: {
     verDetalle: "+ Ver",

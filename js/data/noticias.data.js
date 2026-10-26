@@ -1,118 +1,15 @@
 // js/data/noticias.data.js — FUENTE DE INFORMACIÓN de la pantalla Noticias (mock).
 // Responsable: Frente Noticias (grupos 10–12). Este archivo no contiene lógica.
 //
-// Lo consume scripts/build.js (ver el contrato en scripts/render.js) y también el
-// navegador: js/pages/noticias/noticias.js lee `noticias` y `ui`.
-//   · `textos`   → textos fijos. Cada clave corresponde a un data-tx="clave" de
-//                  noticias.html y define, opcionalmente, su tipografía.
+// Lo consume scripts/build.js para las noticias recientes de inicio y también
+// el navegador: js/pages/noticias/noticias.js lee `noticias` y `ui`.
 //   · `noticias` → registros (título, detalle, fecha, tipo, autor, contenido).
 //   · `ui`       → textos que la página escribe en tiempo de ejecución.
-// Flujo: editar este archivo → `npm run build` → commitear noticias.html y
-// css/pages/noticias/tipografia.css.
+// Flujo: editar este archivo → `npm run build` → commitear index.html y
+// cualquier otro archivo generado.
 //
 // Reemplazar por noticias reales validadas por la institución.
 const noticiasData = {
-  // Identidad de la pantalla (<title> y <meta name="description">).
-  textos: {
-    "pantalla-titulo": { titulo: "IPSEL | Noticias" },
-    "pantalla-descripcion": { detalle: "Noticias de demostración para la maqueta del sitio IPSEL." },
-
-    aviso: {
-      detalle:
-        "Contenido de demostración: estas noticias, fechas y categorías son ficticias y no describen hechos institucionales.",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-base",
-      color: "--text",
-    },
-
-    // Encabezado de la pantalla.
-    "encabezado-eyebrow": {
-      titulo: "Actualidad institucional",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-xs",
-      color: "--accent",
-    },
-    "encabezado-titulo": {
-      titulo: "Página interna — Noticias",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-h1",
-      color: "--text",
-    },
-    "encabezado-lead": {
-      detalle: "Listado y detalle de noticias de la institución.",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-base",
-      color: "--text-muted",
-    },
-
-    // Listado.
-    "listado-eyebrow": {
-      titulo: "Novedades",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-xs",
-      color: "--accent",
-    },
-    "listado-titulo": { titulo: "Listado de noticias" },
-    "listado-count": { titulo: "6 noticias" },
-
-    // Filtros.
-    "filtros-titulo": { titulo: "Filtros" },
-    "filtros-limpiar": { titulo: "Limpiar" },
-    "filtro-categoria-label": {
-      titulo: "Categoría",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-sm",
-      color: "--text",
-    },
-    "filtro-categoria-todas": { titulo: "Todas las categorías" },
-    "filtro-fecha-label": {
-      titulo: "Fecha",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-sm",
-      color: "--text",
-    },
-    "filtro-fecha-todas": { titulo: "Todas las fechas" },
-    "filtro-buscar-label": {
-      titulo: "Buscar",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-sm",
-      color: "--text",
-    },
-    "filtro-buscar-placeholder": { detalle: "Título o palabra clave…" },
-
-    // Paginación.
-    "paginacion-etiqueta": { detalle: "Paginación" },
-    "pagina-anterior": { titulo: "‹ Anterior" },
-    "pagina-siguiente": { titulo: "Siguiente ›" },
-
-    // Detalle.
-    "detalle-eyebrow": {
-      titulo: "Noticia seleccionada",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-xs",
-      color: "--accent",
-    },
-    "detalle-seccion-titulo": { titulo: "Detalle de noticia" },
-    "detalle-hero-aria": { detalle: "Imagen principal de la noticia" },
-    "detalle-hero": { detalle: "Imagen principal" },
-    "detalle-categoria": { titulo: "Institucional" },
-    "detalle-titulo": { titulo: "Título de la noticia seleccionada" },
-    "detalle-compartir": { titulo: "Compartir:" },
-    "detalle-compartir-facebook": { detalle: "Compartir en Facebook" },
-    "detalle-compartir-x": { detalle: "Compartir en X" },
-    "detalle-compartir-copiar": { detalle: "Copiar enlace" },
-    "detalle-contenido-titulo": { titulo: "Contenido" },
-
-    // Relacionadas.
-    "relacionadas-eyebrow": {
-      titulo: "Seguí leyendo",
-      tipoFuente: "--font-sans",
-      tamano: "--fs-xs",
-      color: "--accent",
-    },
-    "relacionadas-titulo": { titulo: "Noticias relacionadas" },
-  },
-
   // Textos que la página escribe al interactuar (js/pages/noticias/noticias.js).
   ui: {
     verNoticia: "Ver noticia →",

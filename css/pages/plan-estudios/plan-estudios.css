@@ -8,6 +8,9 @@
   padding-block: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
+.tx-aviso { font-family: var(--font-sans); font-size: var(--fs-base); color: var(--text); }
+.tx-oferta-titulo { font-family: var(--font-sans); font-size: var(--fs-h1); color: var(--text); }
+.tx-carrera-titulo { font-family: var(--font-sans); font-size: var(--fs-h3); color: var(--text); }
 .page-heading { grid-column: 1 / -1; text-align: center; margin-bottom: var(--space-2); }
 .page-heading h1 { margin-top: var(--space-3); }
 .page-heading__subtitle { margin-top: var(--space-3); font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 650; color: var(--text); }

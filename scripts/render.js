@@ -25,20 +25,10 @@ const escAttr = (value) => esc(value).replace(/"/g, "&quot;");
 const join = (rows) => rows.join("\n");
 
 const MONTHS = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
-const MESES = [
-  "enero", "febrero", "marzo", "abril", "mayo", "junio",
-  "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
-];
 
 const shortDate = (iso) => {
   const [, month, day] = String(iso).split("-");
   return `${day} ${MONTHS[Number(month) - 1] || ""}`.trim();
-};
-
-const monthLabel = (ym) => {
-  const [year, month] = String(ym).split("-");
-  const name = MESES[Number(month) - 1] || "";
-  return `${name.charAt(0).toUpperCase()}${name.slice(1)} ${year}`.trim();
 };
 
 /* ----------------------------- Textos fijos ------------------------------- */
@@ -220,20 +210,6 @@ const datoItem = (d) => join([`<div class="contact-list__item">`, `  <dt>${esc(d
 const faqItem = (f) =>
   join([`<details class="faq__item">`, `  <summary>${esc(f.titulo)}</summary>`, `  <p>${esc(f.detalle)}</p>`, `</details>`]);
 
-/* --------------------------- Noticias (filtros) ---------------------------- */
-
-// Opciones del filtro de fecha: un mes por cada mes presente en las noticias.
-const mesesOptions = (noticias) => {
-  const meses = [...new Set((noticias || []).map((n) => String(n.fecha).slice(0, 7)))].sort().reverse();
-  return meses.map((ym) => `<option value="${esc(ym)}">${esc(monthLabel(ym))}</option>`).join("\n");
-};
-
-// Opciones del filtro de categoría: una por cada `tipo` presente en las noticias.
-const tiposOptions = (noticias) => {
-  const tipos = [...new Set((noticias || []).map((n) => n.tipo).filter(Boolean))];
-  return tipos.map((t) => `<option>${esc(t)}</option>`).join("\n");
-};
-
 /* -------------------------- Plan de estudios (pestañas) -------------------- */
 
 const yearTab = (year, label, index) =>
@@ -280,10 +256,6 @@ function buildBlocks(data) {
     "contacto.html": {
       "contacto-datos": (contacto.datos || []).map(datoItem).join("\n"),
       "contacto-faq": (contacto.faq || []).map(faqItem).join("\n"),
-    },
-    "noticias.html": {
-      "noticias-tipos": tiposOptions(noticias),
-      "noticias-meses": mesesOptions(noticias),
     },
     "plan-estudios.html": {
       "plan-anios": Object.entries(plan.años || {})
