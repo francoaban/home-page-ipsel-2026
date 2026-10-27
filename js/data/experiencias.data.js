@@ -138,3 +138,17 @@ const experienciasData = {
   communityNote:
     "No se muestran testimonios ficticios atribuidos a estudiantes, familias o personal. Este bloque queda como marcador de posición hasta contar con testimonios autorizados por escrito.",
 };
+const experiencias = [
+  {
+    titulo: "Viaje a la montaña",
+    descripcion: "Una experiencia inolvidable",
+    imagen: "/imagenes/montana.jpg"
+  },
+  {
+    titulo: "Aventura en el río",
+    descripcion: "Un día lleno de diversión",
+    imagen: "/imagenes/rio.jpg"
+  }
+];
+
+export default experiencias;
