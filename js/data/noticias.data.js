@@ -55,7 +55,8 @@ const noticiasData = {
 //     Las imágenes actuales (img/noticias/*.svg) son ilustraciones provisorias sin personas.
 const noticiasData = {
   // Textos que la página escribe al interactuar (js/pages/noticias/noticias.js).
-  ui: {
+  
+  {
     tituloSeccion: "Novedades del colegio",
     subtituloSeccion: "Actividades, proyectos y novedades de la comunidad IPSEL.",
     verNoticia: "Leer más →",
