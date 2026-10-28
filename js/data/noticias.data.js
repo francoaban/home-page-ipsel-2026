@@ -33,62 +33,7 @@ const noticiasData = {
 
   // Registros de noticias.
   noticias: [
-    // js/data/noticias.data.js — FUENTE DE INFORMACIÓN de la pantalla Noticias.
-// Colegio Privado IPSEL · Proyecto de Programación, 5.º año.
-// Este archivo no contiene lógica.
-//
-// Lo consume scripts/build.js para las noticias recientes de inicio y también
-// el navegador: js/pages/noticias/noticias.js lee `noticias`, `categorias` y `ui`.
-//   · `noticias`   → registros (título, detalle, fecha, categoría, autor, imagen, contenido).
-//   · `categorias` → lista de categorías para el filtro (debe coincidir con `tipo`).
-//   · `ui`         → textos que la página escribe en tiempo de ejecución.
-// Flujo: editar este archivo → `npm run build` → commitear index.html y
-// cualquier otro archivo generado.
-//
-// IMPORTANTE (según el proyecto):
-//   · Verificar con la institución fechas, hechos y participantes antes de publicar.
-//   · Publicar fotos de estudiantes solo con las autorizaciones correspondientes.
-//   · `imagen` debe ser una ruta local (ej. "img/noticias/expo-2026.jpg") o un enlace
-//     directo a un archivo de imagen. Los enlaces "share.google" NO sirven como imagen:
-//     descargá la foto, guardala en img/noticias/ y poné la ruta acá.
-//     Si es null, la página muestra el texto `ui.sinImagen`.
-//     Las imágenes actuales (img/noticias/*.svg) son ilustraciones provisorias sin personas.
-const noticiasData = {
-  // Textos que la página escribe al interactuar (js/pages/noticias/noticias.js).
   
-  {
-    tituloSeccion: "Novedades del colegio",
-    subtituloSeccion: "Actividades, proyectos y novedades de la comunidad IPSEL.",
-    verNoticia: "Leer más →",
-    volver: "← Volver a las novedades",
-    noticiaSingular: "noticia",
-    noticiaPlural: "noticias",
-    todas: "Todas",
-    sinResultados: "No se encontraron noticias para los filtros seleccionados.",
-    sinResultadosAyuda: "Probá cambiar la categoría, la fecha o las palabras de búsqueda.",
-    publicado: "Publicado: {fecha}",
-    categoria: "Categoría: {tipo}",
-    por: "Por: {autor}",
-    imagenPrincipal: "Imagen principal",
-    imagenIlustrativa: "Imagen ilustrativa de {titulo}",
-    sinImagen: "Sin imagen disponible",
-    sinResultadosTitulo: "No hay noticias para mostrar",
-    sinResultadosCategoria: "Sin resultados",
-    enlaceCopiado: "Enlace copiado",
-    enlaceManual: "Copiá el enlace desde la barra del navegador",
-    seleccionada: "Noticia seleccionada: {titulo}",
-    pagina: "Página {n}",
-  },
-
-  // Categorías disponibles (coinciden con el campo `tipo` de cada noticia).
-  categorias: [
-    "Actividades escolares",
-    "Tecnología e Informática",
-    "Institucional",
-  ],
-
-  // Registros de noticias (de la más reciente a la más antigua).
-  noticias: [
     {
       id: 1,
       titulo: "Estudiantes de IPSEL desarrollaron proyectos de programación y tecnología",
